@@ -17,6 +17,8 @@ public class Pizza{
 public readonly record struct PizzaCreate(string Id,string Name){};
 public readonly record struct PizzaUpdate(string Name){};
 
+public readonly record struct Query(string? Name=null,int Size=0, int Page=0){};
+
 [ApiController]
 [Route("/api/v1/[controller]")]
 public class PizzasController:ControllerBase{
@@ -27,9 +29,16 @@ public class PizzasController:ControllerBase{
         new Pizza("3","Cuatro Quesos")
     };
     [HttpGet]
-    public IEnumerable<Pizza> getAll(){
+    public IEnumerable<Pizza> getAll(string? name = null,int page=0,int size=0){
+        //name,page,size        
         return pizzas;
     }
+
+    /* [HttpGet]
+    public IEnumerable<Pizza> getAll([FromQuery]Query query){
+        //name,page,size        
+        return pizzas;
+    }*/
 
     [HttpGet("{id}")]
     public ActionResult<Pizza> get(string id){    
