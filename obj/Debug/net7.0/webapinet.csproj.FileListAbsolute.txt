@@ -31,3 +31,6 @@ C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\obj\Debu
 C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\obj\Debug\net7.0\webapinet.pdb
 C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\obj\Debug\net7.0\webapinet.genruntimeconfig.cache
 C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\obj\Debug\net7.0\ref\webapinet.dll
+C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Home\Documents\Cursos 2023\Api Rest Pronoide\temario\webapinet\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
