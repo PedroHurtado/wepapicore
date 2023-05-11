@@ -23,6 +23,10 @@ public readonly record struct Query(string? Name=null,int Size=0, int Page=0){};
 [Route("/api/v1/[controller]")]
 public class PizzasController:ControllerBase{
 
+    private readonly PizzaDbContext context;
+    public PizzasController(PizzaDbContext context){
+        this.context = context;
+    }
     public static readonly List<Pizza> pizzas = new List<Pizza>(){
         new Pizza("1","Carbonara"),
         new Pizza("2","Mediterraneo"),
@@ -30,8 +34,8 @@ public class PizzasController:ControllerBase{
     };
     [HttpGet]
     public IEnumerable<Pizza> getAll(string? name = null,int page=0,int size=0){
-        //name,page,size        
-        return pizzas;
+         
+        return context.Pizzas;
     }
 
     /* [HttpGet]
@@ -49,7 +53,8 @@ public class PizzasController:ControllerBase{
     [HttpPost]
     public ActionResult<Pizza> create([FromBody]PizzaCreate command){
         var pizza = new Pizza(command.Id, command.Name);
-        pizzas.Add(pizza);
+        context.Pizzas.Add(pizza); //repository
+        context.SaveChanges(); //UOW
         return Created("", pizza);
     }
 
