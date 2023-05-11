@@ -53,7 +53,7 @@ public class PizzasController:ControllerBase{
     [HttpPost]
     public ActionResult<Pizza> create([FromBody]PizzaCreate command){
         var pizza = new Pizza(command.Id, command.Name);
-        context.Pizzas.Add(pizza); //repository
+        context.Pizzas.Add(pizza); //repository        
         context.SaveChanges(); //UOW
         return Created("", pizza);
     }
